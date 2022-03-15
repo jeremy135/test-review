@@ -1,0 +1,26 @@
+<div class="emoji-items-top row">
+  <div class="content__title col-9"><h1 class="h3">{{pageTitle}}</h1></div>
+  <div class="content__search col-3">
+    <input type="text" class="form-control" placeholder="Искать" (input)="emojiSearch($event)"></div>
+</div>
+<div class="emoji-items">
+  <div class="emoji-items-head row">
+    <div class="emoji-items-head__title col-2">Имя</div>
+    <div class="emoji-items-head__title col-7">Ссылка</div>
+    <div class="emoji-items-head__title col-3">Действия</div>
+  </div>
+  <app-emoji-item *ngFor="let emojiItem of emoji"
+                  [emoji]="emojiItem"
+                  [page]="pageName"
+                  [(emoji)]="emoji"
+                  (onEmojiDeleted)="loadPage()">
+  </app-emoji-item>
+</div>
+<ngb-pagination class="d-flex justify-content-center"
+                [collectionSize]="emojiSize"
+                [pageSize]="emojiPerPage"
+                [(page)]="pageNumber"
+                [maxSize]="10"
+                (pageChange)="onPageChange($event)"
+                *ngIf="emojiSize > emojiPerPage">
+</ngb-pagination>
