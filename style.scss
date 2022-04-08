@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background: rgb(44, 44, 44);
+}
+a {
+    text-decoration: none;
+}
+button {
+    outline: none;
+}
+ul {
+    list-style-type: none;
+}
+
+
+
+.all-items {
+    margin-top: 61px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(19,19,19,1);
+    color: rgba(255, 255, 255, 0.88);
+    padding: 10px;
+    font-size: 18px;
+    &__name {
+        width: 20%;
+        margin-top: auto;
+    }
+    &__url {
+        color: #3ea6ff;
+        margin-top: auto;
+        text-align: left;
+        text-decoration: underline;
+        white-space: nowrap;
+    }
+}
+
+.content {
+    display: flex;
+    margin-left: auto;
+    height: 25px;
+    &__img {
+        &-favourite {
+            filter: brightness(130%);
+        }
+    }
+    
+    &__button {
+        width: 30px;
+        border-radius: 8px;
+        border: 0px;
+        margin-left: 10px;
+        &-delete {
+            background-color: #f44336;
+        }
+        &-favourite {
+            background-color: #008CBA;
+        }
+        &-star {
+            background-color: rgb(255, 215, 0)
+        }
+        &-restore {
+            width: auto;
+            box-sizing: border-box;
+            padding: 5px;
+            color: rgba(255, 255, 255, 0.88);
+            background-color: #008CBA;
+        }
+    }
+}
